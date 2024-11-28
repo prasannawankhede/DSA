@@ -1,1 +1,1 @@
-{"version":1,"defects":{"LinerSearchTest::testLinear":8},"times":{"LinerSearchTest::testLinear":0.005}}
+{"version":1,"defects":{"LinerSearchTest::testLinear":8,"LargestElementInArrayTest::testFind":7,"SecondLargestElementArrayTest::testFindSecondLargest":7},"times":{"LinerSearchTest::testLinear":0.005,"LargestElementInArrayTest::testFind":0.084,"SecondLargestElementArrayTest::testFindSecondLargest":0.003}}
