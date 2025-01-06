@@ -6,8 +6,8 @@ use App\PlainTheArrayNested;
 class PlainTheArrayNestedTest extends TestCase {
     public function test() {
         $obj = new PlainTheArrayNested();
-        $result = $obj->do([[10, 20], [30, 40, [50, 60, [70]]]]);
+        $result = $obj->do([1, [2, 3], [4, 5, [6]]]);
 
-        $this->assertEquals([10, 20, 30, 40, 50, 60, 70], $result);
+        $this->assertEquals([1,2,3,4,5,6], $result);
     }
 }
