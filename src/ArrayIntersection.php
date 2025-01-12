@@ -1,0 +1,22 @@
+<?php
+
+namespace App;
+
+class ArrayIntersection {
+
+    public function find($arr1, $arr2) {
+        $temp = [];
+
+        for ($i = 0; $i < count($arr1); $i++) {
+            // Check if the element of $arr1 exists in $arr2
+            for ($j = 0; $j < count($arr2); $j++) {
+                if ($arr1[$i] === $arr2[$j] && !in_array($arr1[$i], $temp)) {
+                    $temp[] = $arr1[$i];
+                    break; // Exit inner loop once a match is found
+                }
+            }
+        }
+
+        return $temp;
+    }
+}
