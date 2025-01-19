@@ -1,35 +1,39 @@
 <?php
 
+namespace Tests;
+
 use PHPUnit\Framework\TestCase;
 use App\FindMissingLetterRefactor;
 
 class FindMissingLetterRefactorTest extends TestCase
 {
-    public function testUppercaseArray()
+    private $finder;
+
+    protected function setUp(): void
     {
-        $finder = new FindMissingLetterRefactor();
-        $this->assertEquals('C', $finder->give(['A', 'B', 'D']));
-        $this->assertEquals('F', $finder->give(['D', 'E', 'G']));
+        $this->finder = new FindMissingLetterRefactor();
     }
 
-    public function testLowercaseArray()
+    public function testUppercaseSequence()
     {
-        $finder = new FindMissingLetterRefactor();
-        $this->assertEquals('c', $finder->give(['a', 'b', 'd']));
-        $this->assertEquals('f', $finder->give(['d', 'e', 'g']));
+        $this->assertEquals('C', $this->finder->give(['A', 'B', 'D', 'E']));
+        $this->assertEquals('G', $this->finder->give(['E', 'F', 'H', 'I']));
     }
 
-    public function testNoMissingLetter()
+    public function testLowercaseInputHandledAsUppercase()
     {
-        $finder = new FindMissingLetterRefactor();
-        $this->assertEquals('', $finder->give(['a', 'b', 'c']));
-        $this->assertEquals('', $finder->give(['X', 'Y', 'Z']));
+        $this->assertEquals('C', $this->finder->give(['a', 'b', 'd', 'e']));
+        $this->assertEquals('G', $this->finder->give(['e', 'f', 'h', 'i']));
     }
 
-    public function testSingleLetterArray()
+    public function testCompleteSequenceNoMissing()
     {
-        $finder = new FindMissingLetterRefactor();
-        $this->assertEquals('', $finder->give(['A']));
-        $this->assertEquals('', $finder->give(['z']));
+        $this->assertEquals('', $this->finder->give(['A', 'B', 'C', 'D']));
+    }
+
+    public function testEdgeCases()
+    {
+        $this->assertEquals('B', $this->finder->give(['A', 'C']));
+        $this->assertEquals('Y', $this->finder->give(['X', 'Z']));
     }
 }
