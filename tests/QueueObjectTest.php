@@ -73,18 +73,18 @@ class QueueObjectTest extends TestCase
         $queue->peek();
     }
     public function testPrint()
-{
-    $queue = new QueueObject();
+    {
+        $queue = new QueueObject();
 
-    // Enqueue objects
-    $obj1 = (object) ['id' => 1, 'name' => 'Alice'];
-    $obj2 = (object) ['id' => 2, 'name' => 'Bob'];
-    $queue->enqueue($obj1);
-    $queue->enqueue($obj2);
+        // Enqueue objects
+        $obj1 = (object) ['id' => 1, 'name' => 'Alice'];
+        $obj2 = (object) ['id' => 2, 'name' => 'Bob'];
+        $queue->enqueue($obj1);
+        $queue->enqueue($obj2);
 
-    // Capture the output
-    $this->expectOutputString(
-        str_replace("\r\n", "\n", 'Array
+        // Capture the output
+        $this->expectOutputString(
+            str_replace("\r\n", "\n", 'Array
 (
     [0] => stdClass Object
         (
@@ -100,11 +100,10 @@ class QueueObjectTest extends TestCase
 
 )
 ')
-    );
+        );
 
-    // Call the print method
-    $queue->print();
-}
-
+        // Call the print method
+        $queue->print();
+    }
 
 }
