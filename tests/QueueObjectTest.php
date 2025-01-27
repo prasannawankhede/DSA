@@ -9,8 +9,8 @@ class QueueObjectTest extends TestCase
     {
         $queue = new QueueObject();
 
-        $obj1 = (object)['id' => 1, 'name' => 'Alice'];
-        $obj2 = (object)['id' => 2, 'name' => 'Bob'];
+        $obj1 = (object) ['id' => 1, 'name' => 'Alice'];
+        $obj2 = (object) ['id' => 2, 'name' => 'Bob'];
 
         $queue->enqueue($obj1);
         $queue->enqueue($obj2);
@@ -22,8 +22,8 @@ class QueueObjectTest extends TestCase
     {
         $queue = new QueueObject();
 
-        $obj1 = (object)['id' => 1, 'name' => 'Alice'];
-        $obj2 = (object)['id' => 2, 'name' => 'Bob'];
+        $obj1 = (object) ['id' => 1, 'name' => 'Alice'];
+        $obj2 = (object) ['id' => 2, 'name' => 'Bob'];
 
         $queue->enqueue($obj1);
         $queue->enqueue($obj2);
@@ -36,8 +36,8 @@ class QueueObjectTest extends TestCase
     {
         $queue = new QueueObject();
 
-        $obj1 = (object)['id' => 1, 'name' => 'Alice'];
-        $obj2 = (object)['id' => 2, 'name' => 'Bob'];
+        $obj1 = (object) ['id' => 1, 'name' => 'Alice'];
+        $obj2 = (object) ['id' => 2, 'name' => 'Bob'];
 
         $queue->enqueue($obj1);
         $queue->enqueue($obj2);
@@ -51,7 +51,7 @@ class QueueObjectTest extends TestCase
 
         $this->assertTrue($queue->isEmpty());
 
-        $obj = (object)['id' => 1, 'name' => 'Alice'];
+        $obj = (object) ['id' => 1, 'name' => 'Alice'];
         $queue->enqueue($obj);
 
         $this->assertFalse($queue->isEmpty());
@@ -72,4 +72,39 @@ class QueueObjectTest extends TestCase
         $queue = new QueueObject();
         $queue->peek();
     }
+    public function testPrint()
+{
+    $queue = new QueueObject();
+
+    // Enqueue objects
+    $obj1 = (object) ['id' => 1, 'name' => 'Alice'];
+    $obj2 = (object) ['id' => 2, 'name' => 'Bob'];
+    $queue->enqueue($obj1);
+    $queue->enqueue($obj2);
+
+    // Capture the output
+    $this->expectOutputString(
+        str_replace("\r\n", "\n", 'Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 1
+            [name] => Alice
+        )
+
+    [1] => stdClass Object
+        (
+            [id] => 2
+            [name] => Bob
+        )
+
+)
+')
+    );
+
+    // Call the print method
+    $queue->print();
+}
+
+
 }
