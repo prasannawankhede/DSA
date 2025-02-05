@@ -1,7 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\ArrayMapPolyfill;
+use App\Others\ArrayMapPolyfill;
+
 
 class ArrayMapPolyfillTest extends TestCase
 {
