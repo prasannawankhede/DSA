@@ -61,4 +61,30 @@ class LinkedListTest extends TestCase
         $this->assertEquals(3, $this->list->getSize());
         $this->assertEquals([30, 20, 10], $this->list->toArray());
     }
+
+    /**
+     * Tests the output of printList() when the list is empty.
+     *
+     * @return void
+     */
+    public function testPrintEmptyList(): void
+    {
+        $this->expectOutputString("List is empty");
+        $this->list->printList();
+    }
+
+    /**
+     * Tests the output of printList() when the list has multiple elements.
+     *
+     * @return void
+     */
+    public function testPrintNonEmptyList(): void
+    {
+        $this->list->prepend(10);
+        $this->list->prepend(20);
+        $this->list->prepend(30);
+        // Expected printed output: "30->20->10->"
+        $this->expectOutputString("30->20->10->");
+        $this->list->printList();
+    }
 }

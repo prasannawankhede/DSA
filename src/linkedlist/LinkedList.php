@@ -1,88 +1,46 @@
 <?php
-
 namespace App\linkedlist;
 
-class ListNode {
+class ListNode
+{
 
-    /**
-     * The value stored in the node.
-     *
-     * @var mixed
-     */
     public $value;
-
-    /**
-     * The next node in the linked list.
-     *
-     * @var ListNode|null
-     */
     public $next;
 
-    /**
-     * ListNode constructor.
-     *
-     * @param mixed $value
-     */
+    // Correct constructor name
     public function __construct($value)
     {
         $this->value = $value;
-        $this->next = null;
+        $this->next  = null;
     }
 }
 
-class LinkedList {
+class LinkedList
+{
 
-    /**
-     * The head (first node) of the linked list.
-     *
-     * @var ListNode|null
-     */
     private $head;
-
-    /**
-     * The size (number of nodes) of the linked list.
-     *
-     * @var int
-     */
     private $size;
 
-    /**
-     * LinkedList constructor.
-     */
+    // Correct constructor name and proper initialization of head
     public function __construct()
     {
         $this->head = null;
         $this->size = 0;
     }
 
-    /**
-     * Checks if the linked list is empty.
-     *
-     * @return bool
-     */
-    public function isEmpty(): bool
+    public function isEmpty()
     {
         return $this->size === 0;
     }
 
-    /**
-     * Returns the size of the linked list.
-     *
-     * @return int
-     */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->size;
     }
 
-    /**
-     * Prepends a value to the beginning of the linked list.
-     *
-     * @param mixed $value
-     * @return void
-     */
-    public function prepend($value): void
+    public function prepend($value)
     {
+        // Use proper class name case
         $node = new ListNode($value);
 
         if ($this->isEmpty()) {
@@ -92,22 +50,38 @@ class LinkedList {
             $this->head = $node;
         }
 
-        $this->size++;
+        $this->size++; // Don't forget to increment the size!
     }
 
-    /**
-     * Converts the linked list to an array.
-     *
-     * @return array
-     */
     public function toArray(): array
     {
         $elements = [];
-        $current = $this->head;
+        $current  = $this->head;
         while ($current !== null) {
             $elements[] = $current->value;
-            $current = $current->next;
+            $current    = $current->next;
         }
         return $elements;
+    }
+
+    public function printList(){
+
+        if($this->isEmpty()){
+            echo "List is empty";
+
+        }else{
+
+            $current = $this->head;
+            $list = "";
+
+            while($current){
+
+                $list = $list . $current->value  . "->";
+                $current = $current->next;
+
+            }
+
+            echo $list;
+        }
     }
 }
