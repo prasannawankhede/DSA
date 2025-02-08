@@ -53,6 +53,25 @@ class LinkedList
         $this->size++; // Don't forget to increment the size!
     }
 
+    public function append($value){
+
+        $node = new ListNode($value);
+
+        $current = $this->head;
+
+        if($this->isEmpty()){
+            $this->head = $node;
+        }else{
+            while($current->next !== null){
+                $current = $current->next;
+            }
+            $current->next = $node;
+        }
+
+        $this->size++;
+
+    }
+
     public function toArray(): array
     {
         $elements = [];

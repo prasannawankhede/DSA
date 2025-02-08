@@ -35,31 +35,31 @@ class LinkedListTest extends TestCase
     }
 
     /**
-     * Tests prepending one element to the linked list.
+     * Tests appending one element to the linked list.
      *
      * @return void
      */
-    public function testPrependOneElement(): void
+    public function testAppendOneElement(): void
     {
-        $this->list->prepend(10);
+        $this->list->append(10);
         $this->assertFalse($this->list->isEmpty());
         $this->assertEquals(1, $this->list->getSize());
         $this->assertEquals([10], $this->list->toArray());
     }
 
     /**
-     * Tests prepending multiple elements to the linked list.
+     * Tests appending multiple elements to the linked list.
      *
      * @return void
      */
-    public function testPrependMultipleElements(): void
+    public function testAppendMultipleElements(): void
     {
-        $this->list->prepend(10);
-        $this->list->prepend(20);
-        $this->list->prepend(30);
-        // Since we prepend, the expected list is [30, 20, 10]
+        $this->list->append(10);
+        $this->list->append(20);
+        $this->list->append(30);
+        // Since we append, the expected list order is [10, 20, 30]
         $this->assertEquals(3, $this->list->getSize());
-        $this->assertEquals([30, 20, 10], $this->list->toArray());
+        $this->assertEquals([10, 20, 30], $this->list->toArray());
     }
 
     /**
@@ -74,17 +74,17 @@ class LinkedListTest extends TestCase
     }
 
     /**
-     * Tests the output of printList() when the list has multiple elements.
+     * Tests the output of printList() when the list has multiple elements appended.
      *
      * @return void
      */
     public function testPrintNonEmptyList(): void
     {
-        $this->list->prepend(10);
-        $this->list->prepend(20);
-        $this->list->prepend(30);
-        // Expected printed output: "30->20->10->"
-        $this->expectOutputString("30->20->10->");
+        $this->list->append(10);
+        $this->list->append(20);
+        $this->list->append(30);
+        // Expected printed output: "10->20->30->"
+        $this->expectOutputString("10->20->30->");
         $this->list->printList();
     }
 }
