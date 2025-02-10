@@ -137,66 +137,81 @@ class LinkedListTest extends TestCase
     }
 
     /**
-     * Tests removing an element from the beginning of the list.
+     * Tests removing an element from the beginning of the list using removeValue().
      *
      * @return void
      */
-    public function testRemoveFromBeginning(): void
+    public function testRemoveValueFromHead(): void
     {
         $this->list->append(10);
         $this->list->append(20);
         $this->list->append(30);
-        $removed = $this->list->removeFrom(0);
+        $removed = $this->list->removeValue(10);
         $this->assertEquals(10, $removed);
         $this->assertEquals(2, $this->list->getSize());
         $this->assertEquals([20, 30], $this->list->toArray());
     }
 
     /**
-     * Tests removing an element from the middle of the list.
+     * Tests removing an element from the middle of the list using removeValue().
      *
      * @return void
      */
-    public function testRemoveFromMiddle(): void
+    public function testRemoveValueFromMiddle(): void
     {
         $this->list->append(10);
         $this->list->append(20);
         $this->list->append(30);
-        $removed = $this->list->removeFrom(1);
+        $removed = $this->list->removeValue(20);
         $this->assertEquals(20, $removed);
         $this->assertEquals(2, $this->list->getSize());
         $this->assertEquals([10, 30], $this->list->toArray());
     }
 
     /**
-     * Tests removing an element from the end of the list.
+     * Tests removing an element from the tail of the list using removeValue().
      *
      * @return void
      */
-    public function testRemoveFromEnd(): void
+    public function testRemoveValueFromTail(): void
     {
         $this->list->append(10);
         $this->list->append(20);
         $this->list->append(30);
-        $removed = $this->list->removeFrom(2);
+        $removed = $this->list->removeValue(30);
         $this->assertEquals(30, $removed);
         $this->assertEquals(2, $this->list->getSize());
         $this->assertEquals([10, 20], $this->list->toArray());
     }
 
     /**
-     * Tests removing an element using an invalid index.
+     * Tests attempting to remove a value that does not exist using removeValue().
      *
      * @return void
      */
-    public function testRemoveFromInvalidIndex(): void
+    public function testRemoveValueNotFound(): void
     {
         $this->list->append(10);
         $this->list->append(20);
-        // Index -1 is invalid.
-        $this->assertNull($this->list->removeFrom(-1));
-        // Index equal to size (2) is invalid since valid indexes are 0 and 1.
-        $this->assertNull($this->list->removeFrom(2));
+        $this->list->append(30);
+        $removed = $this->list->removeValue(99);
+        $this->assertNull($removed);
+        // Size should remain unchanged.
+        $this->assertEquals(3, $this->list->getSize());
+        $this->assertEquals([10, 20, 30], $this->list->toArray());
+    }
+
+    /**
+     * Tests attempting to remove a value from an empty list using removeValue().
+     *
+     * @return void
+     */
+    public function testRemoveValueFromEmptyList(): void
+    {
+        $removed = $this->list->removeValue(10);
+        $this->assertNull($removed);
+        $this->assertEquals(0, $this->list->getSize());
+        $this->assertEquals([], $this->list->toArray());
     }
 
     /**

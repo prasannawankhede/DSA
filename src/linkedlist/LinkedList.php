@@ -119,11 +119,45 @@ class LinkedList
 
             $removeNode = $prev->next;
             $prev->next = $removeNode->next;
+            $this->size--;
+            return $removeNode->value;
         }
-        $this->size--;
-        return $removeNode->value;
+        return null;
 
     }
+
+    public function removeValue($value)
+{
+    // If the list is empty, return null.
+    if ($this->isEmpty()) {
+        return null;
+    }
+
+    // If the head contains the target value, remove the head.
+    if ($this->head->value === $value) {
+        $this->head = $this->head->next;
+        $this->size--;
+        return $value;
+    } else {
+        // Initialize a pointer to traverse the list.
+        $prev = $this->head;
+        // Traverse until we find a node whose next node contains the target value.
+        while ($prev->next !== null && $prev->next->value !== $value) {
+            $prev = $prev->next;
+        }
+        // If we found the target node in the list...
+        if ($prev->next !== null) {
+            $removedNode = $prev->next;
+            // Bypass the removed node.
+            $prev->next = $removedNode->next;
+            $this->size--;
+            return $value;
+        }
+    }
+    // If the value was not found, return null.
+    return null;
+}
+
 
     public function toArray(): array
     {
