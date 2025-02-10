@@ -53,16 +53,17 @@ class LinkedList
         $this->size++; // Don't forget to increment the size!
     }
 
-    public function append($value){
+    public function append($value)
+    {
 
         $node = new ListNode($value);
 
         $current = $this->head;
 
-        if($this->isEmpty()){
+        if ($this->isEmpty()) {
             $this->head = $node;
-        }else{
-            while($current->next !== null){
+        } else {
+            while ($current->next !== null) {
                 $current = $current->next;
             }
             $current->next = $node;
@@ -72,24 +73,56 @@ class LinkedList
 
     }
 
-    public function insert($value , $index){
+    public function insert($value, $index)
+    {
 
-        if($index < 0 || $index > $this->size){
+        if ($index < 0 || $index > $this->size) {
             return;
-        }else if($index === 0){
+        } else if ($index === 0) {
             $this->prepend($value);
-        }else{
+        } else {
             $node = new ListNode($value);
             $prev = $this->head;
 
-            for($i = 0; $i < $index - 1; $i++){
+            for ($i = 0; $i < $index - 1; $i++) {
                 $prev = $prev->next;
             }
             $node->next = $prev->next;
             $prev->next = $node;
-            $this->size++; // Increment the size after insertion
+            $this->size++;
 
         }
+    }
+
+    public function removeFrom($index)
+    {
+
+        if ($index < 0 || $index >= $this->size) {
+            return null;
+        }
+
+        $removeNode = null;
+
+        if ($index === 0) {
+
+            $removeNode = $this->head;
+            $this->head = $this->head->next;
+
+        } else {
+
+            $prev = $this->head;
+
+            for ($i = 0; $i < $index - 1; $i++) {
+
+                $prev = $prev->next;
+            }
+
+            $removeNode = $prev->next;
+            $prev->next = $removeNode->next;
+        }
+        $this->size--;
+        return $removeNode->value;
+
     }
 
     public function toArray(): array
@@ -103,19 +136,20 @@ class LinkedList
         return $elements;
     }
 
-    public function printList(){
+    public function printList()
+    {
 
-        if($this->isEmpty()){
+        if ($this->isEmpty()) {
             echo "List is empty";
 
-        }else{
+        } else {
 
             $current = $this->head;
-            $list = "";
+            $list    = "";
 
-            while($current){
+            while ($current) {
 
-                $list = $list . $current->value  . "->";
+                $list    = $list . $current->value . "->";
                 $current = $current->next;
 
             }

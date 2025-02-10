@@ -137,6 +137,69 @@ class LinkedListTest extends TestCase
     }
 
     /**
+     * Tests removing an element from the beginning of the list.
+     *
+     * @return void
+     */
+    public function testRemoveFromBeginning(): void
+    {
+        $this->list->append(10);
+        $this->list->append(20);
+        $this->list->append(30);
+        $removed = $this->list->removeFrom(0);
+        $this->assertEquals(10, $removed);
+        $this->assertEquals(2, $this->list->getSize());
+        $this->assertEquals([20, 30], $this->list->toArray());
+    }
+
+    /**
+     * Tests removing an element from the middle of the list.
+     *
+     * @return void
+     */
+    public function testRemoveFromMiddle(): void
+    {
+        $this->list->append(10);
+        $this->list->append(20);
+        $this->list->append(30);
+        $removed = $this->list->removeFrom(1);
+        $this->assertEquals(20, $removed);
+        $this->assertEquals(2, $this->list->getSize());
+        $this->assertEquals([10, 30], $this->list->toArray());
+    }
+
+    /**
+     * Tests removing an element from the end of the list.
+     *
+     * @return void
+     */
+    public function testRemoveFromEnd(): void
+    {
+        $this->list->append(10);
+        $this->list->append(20);
+        $this->list->append(30);
+        $removed = $this->list->removeFrom(2);
+        $this->assertEquals(30, $removed);
+        $this->assertEquals(2, $this->list->getSize());
+        $this->assertEquals([10, 20], $this->list->toArray());
+    }
+
+    /**
+     * Tests removing an element using an invalid index.
+     *
+     * @return void
+     */
+    public function testRemoveFromInvalidIndex(): void
+    {
+        $this->list->append(10);
+        $this->list->append(20);
+        // Index -1 is invalid.
+        $this->assertNull($this->list->removeFrom(-1));
+        // Index equal to size (2) is invalid since valid indexes are 0 and 1.
+        $this->assertNull($this->list->removeFrom(2));
+    }
+
+    /**
      * Tests the output of printList() when the list is empty.
      *
      * @return void
