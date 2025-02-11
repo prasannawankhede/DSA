@@ -7,7 +7,7 @@ class ProductOfArrayExceptSelf
     public function product($arr): array
     {
         if (count($arr) < 1) {
-            return null;
+            return [];
         }
 
         $ans = [];
