@@ -239,4 +239,59 @@ class LinkedListTest extends TestCase
         $this->expectOutputString("10->20->30->");
         $this->list->printList();
     }
+
+    public function testSearchInEmptyList(): void
+    {
+        $this->assertEquals(-1, $this->list->search(10));
+    }
+    
+    /**
+     * Test that searching for an existing value returns the correct index.
+     *
+     * @return void
+     */
+    public function testSearchExistingValue(): void
+    {
+        // Append some elements to the list.
+        $this->list->append(10);  // index 0
+        $this->list->append(20);  // index 1
+        $this->list->append(30);  // index 2
+        
+        $this->assertEquals(0, $this->list->search(10));
+        $this->assertEquals(1, $this->list->search(20));
+        $this->assertEquals(2, $this->list->search(30));
+    }
+    
+    /**
+     * Test that searching for a value that does not exist returns -1.
+     *
+     * @return void
+     */
+    public function testSearchNonExistingValue(): void
+    {
+        // Append some elements to the list.
+        $this->list->append(10);
+        $this->list->append(20);
+        $this->list->append(30);
+        
+        $this->assertEquals(-1, $this->list->search(40));
+    }
+    
+    /**
+     * Test that searching returns the index of the first occurrence when duplicates exist.
+     *
+     * @return void
+     */
+    public function testSearchWithDuplicates(): void
+    {
+        // Append elements with duplicates.
+        $this->list->append(10);  // index 0
+        $this->list->append(20);  // index 1
+        $this->list->append(20);  // index 2 (duplicate)
+        $this->list->append(30);  // index 3
+        
+        // Should return 1, the first occurrence of 20.
+        $this->assertEquals(1, $this->list->search(20));
+    }
+
 }

@@ -158,6 +158,24 @@ class LinkedList
     return null;
 }
 
+    public function search($value){
+        if($this->isEmpty()){
+            return -1;
+        }
+
+        $current = $this->head;
+        $index = 0;
+
+        while($current){
+            if($current->value === $value){
+                return $index;
+            }
+            $current = $current->next;
+            $index++;
+        }
+        return -1;
+    }
+
 
     public function toArray(): array
     {
