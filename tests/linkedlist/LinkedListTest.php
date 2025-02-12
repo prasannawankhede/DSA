@@ -1,9 +1,8 @@
 <?php
-
 namespace Tests\linkedlist;
 
-use PHPUnit\Framework\TestCase;
 use App\linkedlist\LinkedList;
+use PHPUnit\Framework\TestCase;
 
 class LinkedListTest extends TestCase
 {
@@ -244,7 +243,7 @@ class LinkedListTest extends TestCase
     {
         $this->assertEquals(-1, $this->list->search(10));
     }
-    
+
     /**
      * Test that searching for an existing value returns the correct index.
      *
@@ -252,16 +251,16 @@ class LinkedListTest extends TestCase
      */
     public function testSearchExistingValue(): void
     {
-        // Append some elements to the list.
-        $this->list->append(10);  // index 0
-        $this->list->append(20);  // index 1
-        $this->list->append(30);  // index 2
-        
+                                 // Append some elements to the list.
+        $this->list->append(10); // index 0
+        $this->list->append(20); // index 1
+        $this->list->append(30); // index 2
+
         $this->assertEquals(0, $this->list->search(10));
         $this->assertEquals(1, $this->list->search(20));
         $this->assertEquals(2, $this->list->search(30));
     }
-    
+
     /**
      * Test that searching for a value that does not exist returns -1.
      *
@@ -273,10 +272,10 @@ class LinkedListTest extends TestCase
         $this->list->append(10);
         $this->list->append(20);
         $this->list->append(30);
-        
+
         $this->assertEquals(-1, $this->list->search(40));
     }
-    
+
     /**
      * Test that searching returns the index of the first occurrence when duplicates exist.
      *
@@ -284,14 +283,39 @@ class LinkedListTest extends TestCase
      */
     public function testSearchWithDuplicates(): void
     {
-        // Append elements with duplicates.
-        $this->list->append(10);  // index 0
-        $this->list->append(20);  // index 1
-        $this->list->append(20);  // index 2 (duplicate)
-        $this->list->append(30);  // index 3
-        
+                                 // Append elements with duplicates.
+        $this->list->append(10); // index 0
+        $this->list->append(20); // index 1
+        $this->list->append(20); // index 2 (duplicate)
+        $this->list->append(30); // index 3
+
         // Should return 1, the first occurrence of 20.
         $this->assertEquals(1, $this->list->search(20));
+    }
+
+    public function testReverseEmptyList(): void
+    {
+        $this->list->reverse();
+        $this->assertEquals([], $this->list->toArray());
+    }
+
+    public function testReverseSingleElementList(): void
+    {
+        $this->list->append(10);
+        $this->list->reverse();
+        $this->assertEquals([10], $this->list->toArray());
+    }
+
+    public function testReverseMultipleElementsList(): void
+    {
+        $this->list->append(10);
+        $this->list->append(20);
+        $this->list->append(30);
+
+        $this->list->reverse();
+
+        // The expected order after reversal should be [30, 20, 10]
+        $this->assertEquals([30, 20, 10], $this->list->toArray());
     }
 
 }

@@ -176,6 +176,21 @@ class LinkedList
         return -1;
     }
 
+    public function reverse(){
+
+        $prev = null;
+        $curr = $this->head;
+
+        while($curr !== null){
+
+            $next = $curr->next;
+            $curr->next = $prev;
+            $prev = $curr;
+            $curr = $next;
+        }
+        $this->head = $prev;
+    }
+
 
     public function toArray(): array
     {
