@@ -1,28 +1,33 @@
 <?php
 namespace App\linkedlist;
 
-class ListNode {
+class ListNode
+{
     public $value;
     public $next;
 
-    public function __construct($value) {
+    public function __construct($value)
+    {
         $this->value = $value;
         $this->next  = null;
     }
 }
 
-class LinkedListWithTail {
+class LinkedListWithTail
+{
     public $head;
     public $tail;
     public $size;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->head = null;
         $this->tail = null;
         $this->size = 0;
     }
 
-    public function isEmpty(): bool {
+    public function isEmpty(): bool
+    {
         return $this->size === 0;
     }
 
@@ -31,7 +36,8 @@ class LinkedListWithTail {
      * If the list is empty, both head and tail are set to the new node.
      * Otherwise, the new node becomes the new head.
      */
-    public function prepend($value): void {
+    public function prepend($value): void
+    {
         $node = new ListNode($value);
         if ($this->isEmpty()) {
             $this->head = $node;
@@ -43,10 +49,26 @@ class LinkedListWithTail {
         $this->size++;
     }
 
+    public function appendWithTail($value)
+    {
+        $node = new ListNode($value);
+
+        if ($this->isEmpty()) {
+            $this->head = $node;
+            $this->tail = $node;
+        } else {
+            $this->tail->next = $node;
+            $this->tail       = $node;
+        }
+        $this->size++;
+
+    }
+
     /**
      * Converts the linked list to an array.
      */
-    public function toArray(): array {
+    public function toArray(): array
+    {
         $elements = [];
         $current  = $this->head;
         while ($current !== null) {
