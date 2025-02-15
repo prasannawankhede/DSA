@@ -71,5 +71,36 @@ class LinkedListWithTailTest extends TestCase
         // Check that the size is updated.
         $this->assertEquals(3, $list->size, "Size should be 3.");
     }
+    public function testRemoveFromFrontOnSingleElement(): void {
+        $list = new LinkedListWithTail();
+        $list->appendWithTail(10);
+        $removed = $list->removeFromFront();
+        $this->assertEquals(10, $removed, "Should remove and return the single element (10).");
+        $this->assertEquals(0, $list->size, "Size should become 0 after removal.");
+        $this->assertEquals([], $list->toArray(), "toArray() should return an empty array.");
+    }
+
+    /**
+     * Tests removeFromFront on a list with multiple elements.
+     */
+    public function testRemoveFromFrontOnMultipleElements(): void {
+        $list = new LinkedListWithTail();
+        $list->appendWithTail(10);
+        $list->appendWithTail(20);
+        $list->appendWithTail(30);
+        
+        $removed = $list->removeFromFront();
+        $this->assertEquals(10, $removed, "The removed element should be 10 (the front element).");
+        $this->assertEquals(2, $list->size, "Size should be 2 after removal.");
+        $this->assertEquals([20, 30], $list->toArray(), "List should now be [20, 30].");
+        
+        $removed2 = $list->removeFromFront();
+        $this->assertEquals(20, $removed2, "The next removed element should be 20.");
+        $this->assertEquals(1, $list->size, "Size should be 1 after removal.");
+        $this->assertEquals([30], $list->toArray(), "List should now be [30].");
+    }
+
+
+
 
 }
