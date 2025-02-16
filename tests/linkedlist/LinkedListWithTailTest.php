@@ -71,7 +71,8 @@ class LinkedListWithTailTest extends TestCase
         // Check that the size is updated.
         $this->assertEquals(3, $list->size, "Size should be 3.");
     }
-    public function testRemoveFromFrontOnSingleElement(): void {
+    public function testRemoveFromFrontOnSingleElement(): void
+    {
         $list = new LinkedListWithTail();
         $list->appendWithTail(10);
         $removed = $list->removeFromFront();
@@ -83,24 +84,61 @@ class LinkedListWithTailTest extends TestCase
     /**
      * Tests removeFromFront on a list with multiple elements.
      */
-    public function testRemoveFromFrontOnMultipleElements(): void {
+    public function testRemoveFromFrontOnMultipleElements(): void
+    {
         $list = new LinkedListWithTail();
         $list->appendWithTail(10);
         $list->appendWithTail(20);
         $list->appendWithTail(30);
-        
+
         $removed = $list->removeFromFront();
         $this->assertEquals(10, $removed, "The removed element should be 10 (the front element).");
         $this->assertEquals(2, $list->size, "Size should be 2 after removal.");
         $this->assertEquals([20, 30], $list->toArray(), "List should now be [20, 30].");
-        
+
         $removed2 = $list->removeFromFront();
         $this->assertEquals(20, $removed2, "The next removed element should be 20.");
         $this->assertEquals(1, $list->size, "Size should be 1 after removal.");
         $this->assertEquals([30], $list->toArray(), "List should now be [30].");
     }
 
+    public function testRemoveFromEndOnEmptyList(): void
+    {
+        $list    = new LinkedListWithTail();
+        $removed = $list->removeFromEnd();
+        $this->assertNull($removed, "Removing from an empty list should return null.");
+        $this->assertEquals(0, $list->size, "Size should remain 0.");
+        $this->assertEquals([], $list->toArray(), "toArray() should return an empty array.");
+    }
 
+    /**
+     * Tests removeFromEnd on a single-element list.
+     */
+    public function testRemoveFromEndOnSingleElement(): void
+    {
+        $list = new LinkedListWithTail();
+        $list->appendWithTail(10);
+        $removed = $list->removeFromEnd();
+        $this->assertEquals(10, $removed, "Should remove and return the only element (10).");
+        $this->assertEquals(0, $list->size, "Size should become 0 after removal.");
+        $this->assertEquals([], $list->toArray(), "List should now be empty.");
+    }
 
+    /**
+     * Tests removeFromEnd on a list with multiple elements.
+     */
+    public function testRemoveFromEndOnMultipleElements(): void
+    {
+        $list = new LinkedListWithTail();
+        $list->appendWithTail(10);
+        $list->appendWithTail(20);
+        $list->appendWithTail(30);
+        $removed = $list->removeFromEnd();
+        $this->assertEquals(30, $removed, "Should remove and return the last element (30).");
+        $this->assertEquals(2, $list->size, "Size should be reduced by one.");
+        $this->assertEquals([10, 20], $list->toArray(), "The remaining list should be [10,20].");
+        // Additionally, tail should now be the node with value 20.
+        $this->assertEquals(20, $list->tail->value, "Tail should now have value 20.");
+    }
 
 }

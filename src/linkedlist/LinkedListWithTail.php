@@ -64,17 +64,39 @@ class LinkedListWithTail
 
     }
 
-    public function removeFromFront() {
+    public function removeFromFront()
+    {
         if ($this->isEmpty()) {
             return null;
         }
-        $value = $this->head->value;  // Use a consistent variable name.
+        $value      = $this->head->value; // Use a consistent variable name.
         $this->head = $this->head->next;
         $this->size--;
         return $value;
     }
-    
-    
+
+    public function removeFromEnd()
+    {
+
+        if ($this->isEmpty()) {
+            return null;
+        }
+        $value = $this->tail->value;
+        if ($this->size == 1) {
+            $this->head = null;
+            $this->tail = null;
+        } else {
+            $prev = $this->head;
+            while ($prev->next !== $this->tail) {
+                $prev = $prev->next;
+            }
+            $prev->next = null;
+            $this->tail = $prev;
+
+        }
+        $this->size--;
+        return $value;
+    }
 
     /**
      * Converts the linked list to an array.
