@@ -18,8 +18,8 @@ class ListNode
 class LinkedList
 {
 
-    private $head;
-    private $size;
+    public $head;
+    public $size;
 
     // Correct constructor name and proper initialization of head
     public function __construct()

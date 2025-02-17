@@ -111,4 +111,19 @@ class LinkedListWithTail
         }
         return $elements;
     }
+
+    public function printList(): void {
+        if ($this->isEmpty()) {
+            echo "List is empty";
+        } else {
+            $current = $this->head;
+            $output = "";
+            while ($current !== null) {
+                $output .= $current->value . "->";
+                $current = $current->next;
+            }
+            echo $output;
+        }
+    }
+    
 }
