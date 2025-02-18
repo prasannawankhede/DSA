@@ -2,7 +2,7 @@
 namespace App\linkedlist;
 
 class LinkedListStack {
-    private $list;
+    public $list;
 
     public function __construct() {
         // Use the LinkedListWithTail class as the underlying data structure.
