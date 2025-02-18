@@ -1,20 +1,18 @@
 {
     "autoload": {
-        "psr-4": {
-            "App\\": "src/",
-            "App\\Others\\": "src/others/",
-            "App\\linkedlist\\": "src/linkedlist/",
-            "App\\arrayProblems\\": "src/arrayProblems/"
-
-
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\Others\\": "tests/others/",
-            "Tests\\linkedlist\\": "tests/linkedlist/",
-            "Tests\\arrayProblems\\": "tests/arrayProblems/"
-
-        }
+    "psr-4": {
+        "App\\": "src/",
+        "App\\Others\\": "src/others/",
+        "App\\LinkedList\\": "src/linkedlist/",
+        "App\\ArrayProblems\\": "src/arrayProblems/"
     }
+},
+"autoload-dev": {
+    "psr-4": {
+        "Tests\\Others\\": "tests/others/",
+        "Tests\\LinkedList\\": "tests/linkedlist/",
+        "Tests\\ArrayProblems\\": "tests/arrayProblems/"
+    }
+}
+
 }

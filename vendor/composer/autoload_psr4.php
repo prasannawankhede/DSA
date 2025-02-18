@@ -7,8 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Tests\\Others\\' => array($baseDir . '/tests/others'),
+    'Tests\\LinkedList\\' => array($baseDir . '/tests/linkedlist'),
+    'Tests\\ArrayProblems\\' => array($baseDir . '/tests/arrayProblems'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'App\\Others\\' => array($baseDir . '/src/others'),
+    'App\\LinkedList\\' => array($baseDir . '/src/linkedlist'),
+    'App\\ArrayProblems\\' => array($baseDir . '/src/arrayProblems'),
     'App\\' => array($baseDir . '/src'),
 );
