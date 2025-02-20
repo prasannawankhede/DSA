@@ -23,7 +23,7 @@ class FindSizeLL
             $count++;
             $current = $current->next;
         }
-
+        $this->size = $count;
         return $count;
     }
 
