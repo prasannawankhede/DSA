@@ -1,24 +1,29 @@
 <?php
 namespace App\LinkedList;
 
-class LinkedListBase
+class LinkedListBase 
 {
-    public $head;
-    public $size;
+    public ?LLNode $head = null;
+    public int $size = 0;
 
-    public function __construct()
+    public function isEmpty(): bool
     {
-        $this->head = null;
-        $this->size = 0;
+        return $this->head === null;
     }
 
-    public function isEmpty()
+    public function addNode($value)
     {
-        return $this->size === 0;
-    }
+        $node = new LLNode($value);
 
-    public function getSize()
-    {
-        return $this->size;
+        if ($this->head === null) {
+            $this->head = $node;
+        } else {
+            $current = $this->head;
+            while ($current->next !== null) {
+                $current = $current->next;
+            }
+            $current->next = $node;
+        }
+        $this->size++;
     }
 }
