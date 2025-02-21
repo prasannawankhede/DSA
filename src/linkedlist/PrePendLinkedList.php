@@ -18,5 +18,6 @@ class PrePendLinkedList extends LinkedListBase
         }
 
         $this->size++;
+        
     }
 }
