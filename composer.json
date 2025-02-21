@@ -4,14 +4,18 @@
         "App\\": "src/",
         "App\\Others\\": "src/others/",
         "App\\LinkedList\\": "src/linkedlist/",
-        "App\\ArrayProblems\\": "src/arrayProblems/"
+        "App\\ArrayProblems\\": "src/arrayProblems/",
+        "App\\Algorithms\\": "src/algorithms/"
+
     }
 },
 "autoload-dev": {
     "psr-4": {
         "Tests\\Others\\": "tests/others/",
         "Tests\\LinkedList\\": "tests/linkedlist/",
-        "Tests\\ArrayProblems\\": "tests/arrayProblems/"
+        "Tests\\ArrayProblems\\": "tests/arrayProblems/",
+        "Tests\\Algorithms\\": "tests/algorithms/"
+
     }
 }
 
