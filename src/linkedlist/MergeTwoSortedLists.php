@@ -15,7 +15,6 @@ class MergeTwoSortedLists
         $dummy   = new LLNode(0);
         $current = $dummy;
 
-        // While both lists are non-empty, link the smaller node.
         while ($first !== null && $second !== null) {
             if ($first->value <= $second->value) {
                 $current->next = $first;
@@ -25,9 +24,9 @@ class MergeTwoSortedLists
                 $second        = $second->next;
             }
             $current = $current->next;
+
         }
 
-        // Attach any remaining nodes.
         if ($first !== null) {
             $current->next = $first;
         }
