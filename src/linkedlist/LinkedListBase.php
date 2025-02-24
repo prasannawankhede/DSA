@@ -1,10 +1,10 @@
 <?php
 namespace App\LinkedList;
 
-class LinkedListBase 
+class LinkedListBase
 {
     public ?LLNode $head = null;
-    public int $size = 0;
+    public int $size     = 0;
 
     public function isEmpty(): bool
     {
@@ -26,4 +26,17 @@ class LinkedListBase
         }
         $this->size++;
     }
+
+    
+    public function toArray(): array
+    {
+        $result  = [];
+        $current = $this->head;
+        while ($current !== null) {
+            $result[] = $current->val; // Collect node values
+            $current  = $current->next;
+        }
+        return $result;
+    }
+
 }
