@@ -67,4 +67,17 @@ class CeilFloorFinderTest extends TestCase
         $result = $this->finder->findCeilAndFloor([2, 2, 2, 2, 2], 2);
         $this->assertEquals([2, 2], $result);
     }
+
+    // Added test cases from the problem statement
+    public function testGivenSampleInput1()
+    {
+        $result = $this->finder->findCeilAndFloor([3, 4, 4, 7, 8, 10], 8);
+        $this->assertEquals([8, 8], $result);
+    }
+
+    public function testGivenSampleInput2()
+    {
+        $result = $this->finder->findCeilAndFloor([3, 4, 4, 7, 8, 10], 2);
+        $this->assertEquals([-1, 3], $result);
+    }
 }
