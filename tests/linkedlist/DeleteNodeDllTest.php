@@ -2,11 +2,11 @@
 
 namespace Tests\LinkedList;
 
-use App\LinkedList\DeleteNodeDll;DeleteNodeDllTest
+use App\LinkedList\DeleteNodeDll;
 use App\LinkedList\DLLNode;
 use PHPUnit\Framework\TestCase;
 
-class  extends TestCase
+class DeleteNodeDllTest extends TestCase
 {
     public function testDeleteMiddleNode()
     {
