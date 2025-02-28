@@ -7,7 +7,7 @@ class AddNodeBeforeHeadDll
     public function insertAtFront(?DLLNode $head, int $value): ?DLLNode
     {
 
-        $newNode = new DllNode($value);
+        $newNode = new DLLNode($value);
 
         if ($head === null) {
             return $newNode;
