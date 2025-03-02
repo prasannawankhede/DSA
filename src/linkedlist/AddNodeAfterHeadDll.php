@@ -11,7 +11,7 @@ class AddNodeAfterHeadDll
             return null;
         }
 
-        $newNode = new DLLNode($value);
+        $newNode = new DLLNode($value); 
 
         $current = $head;
 
