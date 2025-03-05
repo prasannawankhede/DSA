@@ -83,4 +83,14 @@ class BinarySearchTreeImplementation
         }
 
     }
+
+    public function inOrder($root)
+    {
+        if ($root) {
+            $this->inOrder($root->left);
+            echo $root->value;
+            $this->inOrder($root->right);
+        }
+
+    }
 }

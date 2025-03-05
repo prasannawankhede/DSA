@@ -52,7 +52,18 @@ class BinarySearchTreeTest extends TestCase
         $this->bst->insert(15);
         $this->bst->insert(3);
         $this->bst->insert(7);
-        $this->expectOutputString("1053715");
+        $this->expectOutputString("1053157");
         $this->bst->preOrder($this->bst->root);
+    }
+
+    public function testInOrderTraversal()
+    {
+        $this->bst->insert(10);
+        $this->bst->insert(5);
+        $this->bst->insert(15);
+        $this->bst->insert(3);
+        $this->bst->insert(7);
+        $this->expectOutputString("3571015");
+        $this->bst->inOrder($this->bst->root);
     }
 }
