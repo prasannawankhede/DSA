@@ -93,4 +93,15 @@ class BinarySearchTreeImplementation
         }
 
     }
+
+    public function postOrder($root)
+    {
+        if ($root) {
+            $this->postOrder($root->left);
+            $this->postOrder($root->right);
+            echo $root->value;
+
+        }
+
+    }
 }
