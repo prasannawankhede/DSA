@@ -6,7 +6,9 @@
         "App\\LinkedList\\": "src/linkedlist/",
         "App\\ArrayProblems\\": "src/arrayProblems/",
         "App\\Algorithms\\": "src/algorithms/",
-        "App\\HashTable\\": "src/hashtable/"
+        "App\\HashTable\\": "src/hashtable/",
+        "App\\Trees\\": "src/trees/"
+
 
 
     }
@@ -17,7 +19,10 @@
         "Tests\\LinkedList\\": "tests/linkedlist/",
         "Tests\\ArrayProblems\\": "tests/arrayProblems/",
         "Tests\\Algorithms\\": "tests/algorithms/",
-        "Tests\\HashTable\\": "tests/hashtable/"
+        "Tests\\HashTable\\": "tests/hashtable/",
+        "Tests\\Trees\\": "tests/trees/"
+
+
 
 
     }
