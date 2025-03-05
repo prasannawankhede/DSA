@@ -1,7 +1,8 @@
 <?php
 namespace App\Trees;
 
-class Node{
+class Node
+{
 
     public function __construct($value)
     {
@@ -11,8 +12,8 @@ class Node{
     }
 }
 
-class BinarySearchTreeImplementation{
-
+class BinarySearchTreeImplementation
+{
 
     public function __construct()
     {
@@ -31,43 +32,55 @@ class BinarySearchTreeImplementation{
 
         if ($this->isEmpty()) {
             $this->root = $newNode;
-        }else{
-            $this->insertNode($this->root,$newNode);
+        } else {
+            $this->insertNode($this->root, $newNode);
         }
 
     }
 
-    public function insertNode($root,$newNode){
+    public function insertNode($root, $newNode)
+    {
 
-        if($newNode->value < $root->value){
+        if ($newNode->value < $root->value) {
 
-            if($root->left === null){
+            if ($root->left === null) {
                 $root->left = $newNode;
-            }else{
-                $this->insertNode($root->left,$newNode);
+            } else {
+                $this->insertNode($root->left, $newNode);
             }
 
-        }else{
-            if($root->right === null){
+        } else {
+            if ($root->right === null) {
                 $root->right = $newNode;
-            }else{
-                $this->insertNode($root->right,$newNode);
+            } else {
+                $this->insertNode($root->right, $newNode);
             }
         }
 
     }
 
-    public function search($root,$value){
-        if($root === null){
+    public function search($root, $value)
+    {
+        if ($root === null) {
             return false;
         }
-        if($value === $root->value){
+        if ($value === $root->value) {
             return true;
         }
-        if($value < $root->value){
-            return $this->search($root->left,$value);
-        }else{
-            return $this->search($root->right,$value);
+        if ($value < $root->value) {
+            return $this->search($root->left, $value);
+        } else {
+            return $this->search($root->right, $value);
         }
+    }
+
+    public function preOrder($root)
+    {
+        if ($root) {
+            echo $root->value;
+            $this->preOrder($root->left);
+            $this->preOrder($root->right);
+        }
+
     }
 }

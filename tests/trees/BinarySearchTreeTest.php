@@ -44,4 +44,15 @@ class BinarySearchTreeTest extends TestCase
         $this->bst->insert(10);
         $this->assertFalse($this->bst->search($this->bst->root, 20), 'Non-existing node should not be found');
     }
+
+    public function testPreOrderTraversal()
+    {
+        $this->bst->insert(10);
+        $this->bst->insert(5);
+        $this->bst->insert(15);
+        $this->bst->insert(3);
+        $this->bst->insert(7);
+        $this->expectOutputString("1053715");
+        $this->bst->preOrder($this->bst->root);
+    }
 }
