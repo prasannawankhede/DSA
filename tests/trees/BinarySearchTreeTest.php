@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class BinarySearchTreeTest extends TestCase
 {
-    private $bst;
+    private $bst; 
 
     protected function setUp(): void
     {
