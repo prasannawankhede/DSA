@@ -60,6 +60,6 @@ class DeleteMiddleNodeTest extends TestCase
         // Case 5: Empty list
         $head = $this->createLinkedList([]);
         $newHead = $deleteMiddleNode->deleteMiddle($head);
-        $this->assertNull($newHead);
+        $this->assertNull($newHead);/////////
     }
 }
