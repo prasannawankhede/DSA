@@ -6,13 +6,21 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Tests\\Trees\\' => array($baseDir . '/tests/trees'),
+    'Tests\\Strings\\' => array($baseDir . '/tests/strings'),
     'Tests\\Others\\' => array($baseDir . '/tests/others'),
     'Tests\\LinkedList\\' => array($baseDir . '/tests/linkedlist'),
+    'Tests\\HashTable\\' => array($baseDir . '/tests/hashtable'),
     'Tests\\ArrayProblems\\' => array($baseDir . '/tests/arrayProblems'),
+    'Tests\\Algorithms\\' => array($baseDir . '/tests/algorithms'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+    'App\\Trees\\' => array($baseDir . '/src/trees'),
+    'App\\Strings\\' => array($baseDir . '/src/strings'),
     'App\\Others\\' => array($baseDir . '/src/others'),
     'App\\LinkedList\\' => array($baseDir . '/src/linkedlist'),
+    'App\\HashTable\\' => array($baseDir . '/src/hashtable'),
     'App\\ArrayProblems\\' => array($baseDir . '/src/arrayProblems'),
+    'App\\Algorithms\\' => array($baseDir . '/src/algorithms'),
     'App\\' => array($baseDir . '/src'),
 );

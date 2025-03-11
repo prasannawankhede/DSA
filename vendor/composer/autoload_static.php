@@ -14,9 +14,13 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
+            'Tests\\Trees\\' => 12,
+            'Tests\\Strings\\' => 14,
             'Tests\\Others\\' => 13,
             'Tests\\LinkedList\\' => 17,
+            'Tests\\HashTable\\' => 16,
             'Tests\\ArrayProblems\\' => 20,
+            'Tests\\Algorithms\\' => 17,
         ),
         'P' => 
         array (
@@ -28,14 +32,26 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         ),
         'A' => 
         array (
+            'App\\Trees\\' => 10,
+            'App\\Strings\\' => 12,
             'App\\Others\\' => 11,
             'App\\LinkedList\\' => 15,
+            'App\\HashTable\\' => 14,
             'App\\ArrayProblems\\' => 18,
+            'App\\Algorithms\\' => 15,
             'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Tests\\Trees\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/trees',
+        ),
+        'Tests\\Strings\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/strings',
+        ),
         'Tests\\Others\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests/others',
@@ -44,9 +60,17 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/../..' . '/tests/linkedlist',
         ),
+        'Tests\\HashTable\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/hashtable',
+        ),
         'Tests\\ArrayProblems\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests/arrayProblems',
+        ),
+        'Tests\\Algorithms\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/algorithms',
         ),
         'PhpParser\\' => 
         array (
@@ -56,6 +80,14 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
+        'App\\Trees\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/trees',
+        ),
+        'App\\Strings\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/strings',
+        ),
         'App\\Others\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/others',
@@ -64,9 +96,17 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/../..' . '/src/linkedlist',
         ),
+        'App\\HashTable\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/hashtable',
+        ),
         'App\\ArrayProblems\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/arrayProblems',
+        ),
+        'App\\Algorithms\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/algorithms',
         ),
         'App\\' => 
         array (
