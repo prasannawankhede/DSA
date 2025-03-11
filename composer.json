@@ -7,7 +7,9 @@
         "App\\ArrayProblems\\": "src/arrayProblems/",
         "App\\Algorithms\\": "src/algorithms/",
         "App\\HashTable\\": "src/hashtable/",
-        "App\\Trees\\": "src/trees/"
+        "App\\Trees\\": "src/trees/",
+        "App\\Strings\\": "src/strings/"
+
 
 
 
@@ -20,7 +22,8 @@
         "Tests\\ArrayProblems\\": "tests/arrayProblems/",
         "Tests\\Algorithms\\": "tests/algorithms/",
         "Tests\\HashTable\\": "tests/hashtable/",
-        "Tests\\Trees\\": "tests/trees/"
+        "Tests\\Trees\\": "tests/trees/",
+        "Tests\\Strings\\": "tests/strings/"
 
 
 
