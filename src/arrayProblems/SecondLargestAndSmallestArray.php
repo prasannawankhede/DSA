@@ -13,7 +13,7 @@ class SecondLargestAndSmallestArray
     $secLargest  = $this->sLargest($arr);
     $secSmallest = $this->sSmallest($arr);
 
-    return ($secLargest === null || $secSmallest === null) ? null : [$secLargest, $secSmallest];
+    return ($secLargest === null && $secSmallest === null) ? null : [$secLargest, $secSmallest];
 }
 
 
