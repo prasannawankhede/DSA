@@ -10,13 +10,13 @@ class DeleteAllOccurrenceskeyInDLL
         $temp = $head;
 
         while ($temp !== null) {
-            $nextNode = $temp->next; // Store next before possible deletion
+            $nextNode = $temp->next;
 
             if ($temp->value === $k) {
                 if ($temp === $head) {
                     $head = $head->next;
                     if ($head !== null) {
-                        $head->prev = null; // Properly update head's prev
+                        $head->prev = null;
                     }
                 } else {
                     $temp->prev->next = $temp->next;
@@ -26,7 +26,7 @@ class DeleteAllOccurrenceskeyInDLL
                 }
             }
 
-            $temp = $nextNode; // Move to the stored next node
+            $temp = $nextNode;
         }
         return $head;
     }

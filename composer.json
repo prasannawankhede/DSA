@@ -8,7 +8,9 @@
         "App\\Algorithms\\": "src/algorithms/",
         "App\\HashTable\\": "src/hashtable/",
         "App\\Trees\\": "src/trees/",
-        "App\\Strings\\": "src/strings/"
+        "App\\Strings\\": "src/strings/",
+        "App\\Recursions\\": "src/recursions/"
+
 
 
 
@@ -23,7 +25,9 @@
         "Tests\\Algorithms\\": "tests/algorithms/",
         "Tests\\HashTable\\": "tests/hashtable/",
         "Tests\\Trees\\": "tests/trees/",
-        "Tests\\Strings\\": "tests/strings/"
+        "Tests\\Strings\\": "tests/strings/",
+        "Tests\\Recursions\\": "tests/recursions/"
+
 
 
 
