@@ -3,11 +3,14 @@ namespace App\Recursions;
 
 class PrintNTimes
 {
-    public function print(int $count = 0)
+    private int $count = 0;
+
+    public function print()
     {
-        if ($count === 5) return;
+        if ($this->count === 5) return;
 
         echo 1;
-        $this->print($count + 1);
+        $this->count++;
+        $this->print();
     }
 }
