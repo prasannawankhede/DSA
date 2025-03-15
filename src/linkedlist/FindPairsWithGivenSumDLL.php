@@ -1,5 +1,4 @@
 <?php
-
 namespace App\LinkedList;
 
 class DLLNode
@@ -19,11 +18,11 @@ class FindPairsWithGivenSumDLL
     public function findPairs(?DLLNode $head, int $target): array
     {
         $result = [];
-        if (!$head || !$head->next) {
+        if (! $head || ! $head->next) {
             return $result; // If list is empty or has only one node, return empty
         }
 
-        $left = $head;
+        $left  = $head;
         $right = $head;
 
         // Move right pointer to the last node
@@ -32,15 +31,18 @@ class FindPairsWithGivenSumDLL
         }
 
         // Two-pointer approach
-        while ($left !== null && $right !== null && $left !== $right && $left->prev !== $right) {
+        while ($left !== null && $right !== null && $left !== $right) {
+
             $currentSum = $left->value + $right->value;
 
-            if ($currentSum == $target) {
+            if ($currentSum === $target) {
                 $result[] = [$left->value, $right->value];
-                $left = $left->next;
-                $right = $right->prev;
+                $left   = $left->next;
+                $right  = $right->prev;
             } elseif ($currentSum < $target) {
+
                 $left = $left->next;
+
             } else {
                 $right = $right->prev;
             }
