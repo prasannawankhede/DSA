@@ -10,7 +10,9 @@
         "App\\Trees\\": "src/trees/",
         "App\\Strings\\": "src/strings/",
         "App\\Recursions\\": "src/recursions/",
-        "App\\Polyfills\\": "src/polyfills/"
+        "App\\Polyfills\\": "src/polyfills/",
+        "App\\Hashing\\": "src/hashing/"
+
 
 
 
@@ -29,7 +31,9 @@
         "Tests\\Trees\\": "tests/trees/",
         "Tests\\Strings\\": "tests/strings/",
         "Tests\\Recursions\\": "tests/recursions/",
-        "Tests\\Polyfills\\": "tests/polyfills/"
+        "Tests\\Polyfills\\": "tests/polyfills/",
+        "Tests\\Hashing\\": "tests/hashing/"
+
 
 
 
