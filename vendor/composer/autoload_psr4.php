@@ -16,6 +16,8 @@ return array(
     'Tests\\HashTable\\' => array($baseDir . '/tests/hashtable'),
     'Tests\\ArrayProblems\\' => array($baseDir . '/tests/arrayProblems'),
     'Tests\\Algorithms\\' => array($baseDir . '/tests/algorithms'),
+    'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'App\\Trees\\' => array($baseDir . '/src/trees'),
     'App\\Strings\\' => array($baseDir . '/src/strings'),
     'App\\Recursions\\' => array($baseDir . '/src/recursions'),

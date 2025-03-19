@@ -5,7 +5,7 @@ namespace App\ArrayProblems;
 class RearrangeBySign{
 
     public function arrange($arr){
-        if(empty($arr)) return 0;
+        if(empty($arr)) return [];
 
         $pos = [];
         $neg = [];
