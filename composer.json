@@ -12,7 +12,9 @@
         "App\\Recursions\\": "src/recursions/",
         "App\\Polyfills\\": "src/polyfills/",
         "App\\Hashing\\": "src/hashing/",
-        "App\\Stacks\\": "src/stacks/"
+        "App\\Stacks\\": "src/stacks/",
+        "App\\Queue\\": "src/queue/"
+
 
 
 
@@ -35,7 +37,9 @@
         "Tests\\Recursions\\": "tests/recursions/",
         "Tests\\Polyfills\\": "tests/polyfills/",
         "Tests\\Hashing\\": "tests/hashing/",
-        "Tests\\Stacks\\": "tests/stacks/"
+        "Tests\\Stacks\\": "tests/stacks/",
+        "Tests\\Queue\\": "tests/queue/"
+
 
 
 

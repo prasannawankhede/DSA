@@ -16,7 +16,9 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             'Tests\\Trees\\' => 12,
             'Tests\\Strings\\' => 14,
+            'Tests\\Stacks\\' => 13,
             'Tests\\Recursions\\' => 17,
+            'Tests\\Queue\\' => 12,
             'Tests\\Polyfills\\' => 16,
             'Tests\\Others\\' => 13,
             'Tests\\LinkedList\\' => 17,
@@ -37,7 +39,9 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             'App\\Trees\\' => 10,
             'App\\Strings\\' => 12,
+            'App\\Stacks\\' => 11,
             'App\\Recursions\\' => 15,
+            'App\\Queue\\' => 10,
             'App\\Polyfills\\' => 14,
             'App\\Others\\' => 11,
             'App\\LinkedList\\' => 15,
@@ -58,9 +62,17 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/../..' . '/tests/strings',
         ),
+        'Tests\\Stacks\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/stacks',
+        ),
         'Tests\\Recursions\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests/recursions',
+        ),
+        'Tests\\Queue\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/queue',
         ),
         'Tests\\Polyfills\\' => 
         array (
@@ -106,9 +118,17 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/../..' . '/src/strings',
         ),
+        'App\\Stacks\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/stacks',
+        ),
         'App\\Recursions\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/recursions',
+        ),
+        'App\\Queue\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/queue',
         ),
         'App\\Polyfills\\' => 
         array (
