@@ -25,7 +25,7 @@ class ImplementQueueUsingSLL
     {
         $this->start = null;
         $this->end   = null;
-        $this->size  = 0;
+        $this->size  = 0; 
     }
 
     public function enqueue(int $x)
