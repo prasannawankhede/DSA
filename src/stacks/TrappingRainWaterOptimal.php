@@ -36,4 +36,4 @@ class TrappingRainWaterOptimal
 
         return $water;
     }
-}
+}    
