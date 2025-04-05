@@ -26,3 +26,4 @@ class ReverseStack
         array_push($stack, $top);
     }
 }
+ 
