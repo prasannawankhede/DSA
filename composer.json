@@ -14,7 +14,9 @@
         "App\\Hashing\\": "src/hashing/",
         "App\\Stacks\\": "src/stacks/",
         "App\\Queue\\": "src/queue/",
-        "App\\BitManipulation\\": "src/bitManipulation/"
+        "App\\BitManipulation\\": "src/bitManipulation/",
+        "App\\Heap\\": "src/heap/"
+
 
 
 
@@ -41,7 +43,9 @@
         "Tests\\Hashing\\": "tests/hashing/",
         "Tests\\Stacks\\": "tests/stacks/",
         "Tests\\Queue\\": "tests/queue/",
-        "Tests\\BitManipulation\\": "tests/bitManipulation/"
+        "Tests\\BitManipulation\\": "tests/bitManipulation/",
+        "Tests\\Heap\\": "tests/heap/"
+
 
 
 
