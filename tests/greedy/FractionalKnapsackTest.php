@@ -16,7 +16,7 @@ class FractionalKnapsackTest extends TestCase
         $capacity = 50;
         $knapsack = new FractionalKnapsack(0, 0); // Dummy object just to call the method
 
-        $result = $knapsack->greedy($capacity, $items);
+        $result = $knapsack->getMaxValue($capacity, $items);
 
         $this->assertEquals(240.0, round($result, 2));
     }
@@ -31,7 +31,7 @@ class FractionalKnapsackTest extends TestCase
         $capacity = 50;
         $knapsack = new FractionalKnapsack(0, 0);
 
-        $result = $knapsack->greedy($capacity, $items);
+        $result = $knapsack->getMaxValue($capacity, $items);
 
         $this->assertEquals(180.0, round($result, 2));
     }
@@ -45,7 +45,7 @@ class FractionalKnapsackTest extends TestCase
         $capacity = 10;
         $knapsack = new FractionalKnapsack(0, 0);
 
-        $result = $knapsack->greedy($capacity, $items);
+        $result = $knapsack->getMaxValue($capacity, $items);
 
         $this->assertEquals(10.0, round($result, 2));
     }
@@ -56,7 +56,7 @@ class FractionalKnapsackTest extends TestCase
         $capacity = 50;
         $knapsack = new FractionalKnapsack(0, 0);
 
-        $result = $knapsack->greedy($capacity, $items);
+        $result = $knapsack->getMaxValue($capacity, $items);
 
         $this->assertEquals(0.0, round($result, 2));
     }

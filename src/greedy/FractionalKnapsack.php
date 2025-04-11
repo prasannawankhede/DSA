@@ -3,38 +3,38 @@ namespace App\Greedy;
 
 class FractionalKnapsack
 {
+    public int $value;
+    public int $weight;
 
-    public $value;
-    public $weight;
-
-    public function __construct($value, $weight)
+    public function __construct(int $value, int $weight)
     {
         $this->value  = $value;
         $this->weight = $weight;
     }
 
-    public function greedy($capacity, $items)
+    public function getMaxValue(int $capacity, array $items): float
     {
-        usort($items, function ($a, $b) {
-            $ratioA = $a->value / $a->weight;
-            $ratioB = $b->value / $b->weight;
-            return $ratioB <=> $ratioA;
+        // Sort items by value/weight ratio in descending order
+        usort($items, function (FractionalKnapsack $a, FractionalKnapsack $b) {
+            $r1 = $a->value / $a->weight;
+            $r2 = $b->value / $b->weight;
+            return $r2 <=> $r1;
         });
 
-        $totalValue = 0;
-        $remaining  = $capacity;
+        $currentWeight = 0;
+        $finalValue    = 0.0;
 
         foreach ($items as $item) {
-            if ($remaining >= $item->weight) {
-                $totalValue += $item->value;
-                $remaining -= $item->weight;
+            if ($currentWeight + $item->weight <= $capacity) {
+                $currentWeight += $item->weight;
+                $finalValue += $item->value;
             } else {
-                $fraction = $remaining / $item->weight;
-                $totalValue += $item->value * $fraction;
+                $remaining = $capacity - $currentWeight;
+                $finalValue += ($item->value / $item->weight) * $remaining;
                 break;
             }
         }
 
-        return $totalValue;
+        return round($finalValue, 2);
     }
 }
