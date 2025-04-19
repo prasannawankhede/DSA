@@ -1,8 +1,11 @@
 <?php
+namespace Tests\BinaryTrees;
 
 use App\BinaryTrees\NodesAtDistanceK;
+use App\BinaryTrees\TreeNode;
+use PHPUnit\Framework\TestCase;
 
-class NodesAtDistanceKTest extends TreeNode
+class NodesAtDistanceKTest extends TestCase
 {
     public function testKDistanceNodes()
     {
@@ -33,6 +36,6 @@ class NodesAtDistanceKTest extends TreeNode
         // Test: Distance 0 from target 3
         $expected = [3];
         $actual   = $nodesAtK->kDistanceNodes($root, 3, 0);
-        $this->assertEquals($expected, $actual); 
+        $this->assertEquals($expected, $actual);
     }
 }

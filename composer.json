@@ -17,7 +17,9 @@
         "App\\BitManipulation\\": "src/bitManipulation/",
         "App\\Heap\\": "src/heap/",
         "App\\Greedy\\": "src/greedy/",
-        "App\\BinaryTrees\\": "src/BinaryTrees/"
+        "App\\BinaryTrees\\": "src/BinaryTrees/",
+"App\\BinarySearchTrees\\": "src/binarySearchTrees/"
+
 
 
 
@@ -50,7 +52,9 @@
         "Tests\\BitManipulation\\": "tests/bitManipulation/",
         "Tests\\Heap\\": "tests/heap/",
         "Tests\\Greedy\\": "tests/greedy/",
-        "Tests\\BinaryTrees\\": "tests/binaryTrees/"
+        "Tests\\BinaryTrees\\": "tests/binaryTrees/",
+"Tests\\BinarySearchTrees\\": "tests/binarySearchTrees/"
+
 
 
 

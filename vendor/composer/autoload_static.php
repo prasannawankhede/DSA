@@ -22,8 +22,13 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
             'Tests\\Polyfills\\' => 16,
             'Tests\\Others\\' => 13,
             'Tests\\LinkedList\\' => 17,
+            'Tests\\Heap\\' => 11,
             'Tests\\Hashing\\' => 14,
             'Tests\\HashTable\\' => 16,
+            'Tests\\Greedy\\' => 13,
+            'Tests\\BitManipulation\\' => 22,
+            'Tests\\BinaryTrees\\' => 18,
+            'Tests\\BinarySearchTrees\\' => 24,
             'Tests\\ArrayProblems\\' => 20,
             'Tests\\Algorithms\\' => 17,
         ),
@@ -45,8 +50,13 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
             'App\\Polyfills\\' => 14,
             'App\\Others\\' => 11,
             'App\\LinkedList\\' => 15,
+            'App\\Heap\\' => 9,
             'App\\Hashing\\' => 12,
             'App\\HashTable\\' => 14,
+            'App\\Greedy\\' => 11,
+            'App\\BitManipulation\\' => 20,
+            'App\\BinaryTrees\\' => 16,
+            'App\\BinarySearchTrees\\' => 22,
             'App\\ArrayProblems\\' => 18,
             'App\\Algorithms\\' => 15,
             'App\\' => 4,
@@ -86,6 +96,10 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/../..' . '/tests/linkedlist',
         ),
+        'Tests\\Heap\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/heap',
+        ),
         'Tests\\Hashing\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests/hashing',
@@ -93,6 +107,22 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         'Tests\\HashTable\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests/hashtable',
+        ),
+        'Tests\\Greedy\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/greedy',
+        ),
+        'Tests\\BitManipulation\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/bitManipulation',
+        ),
+        'Tests\\BinaryTrees\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/binaryTrees',
+        ),
+        'Tests\\BinarySearchTrees\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/binarySearchTrees',
         ),
         'Tests\\ArrayProblems\\' => 
         array (
@@ -142,6 +172,10 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         array (
             0 => __DIR__ . '/../..' . '/src/linkedlist',
         ),
+        'App\\Heap\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/heap',
+        ),
         'App\\Hashing\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/hashing',
@@ -149,6 +183,22 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         'App\\HashTable\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/hashtable',
+        ),
+        'App\\Greedy\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/greedy',
+        ),
+        'App\\BitManipulation\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/bitManipulation',
+        ),
+        'App\\BinaryTrees\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/BinaryTrees',
+        ),
+        'App\\BinarySearchTrees\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/binarySearchTrees',
         ),
         'App\\ArrayProblems\\' => 
         array (
