@@ -1,7 +1,7 @@
 <?php
 namespace App\BinarySearchTrees;
 
-class TreeNode
+class TreeNode  
 {
     public $data;
     public $left;
