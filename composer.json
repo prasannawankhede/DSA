@@ -19,7 +19,9 @@
         "App\\Greedy\\": "src/greedy/",
         "App\\BinaryTrees\\": "src/BinaryTrees/",
 "App\\BinarySearchTrees\\": "src/binarySearchTrees/",
-"App\\Tries\\": "src/tries/"
+"App\\Tries\\": "src/tries/",
+"App\\SlidingWindow\\": "src/slidingWindow/"
+
 
 
 
@@ -56,7 +58,8 @@
         "Tests\\Greedy\\": "tests/greedy/",
         "Tests\\BinaryTrees\\": "tests/binaryTrees/",
 "Tests\\BinarySearchTrees\\": "tests/binarySearchTrees/",
-"Tests\\Tries\\": "tests/tries/"
+"Tests\\Tries\\": "tests/tries/",
+"Tests\\SlidingWindow\\": "tests/slidingWindow/"
 
 
 
