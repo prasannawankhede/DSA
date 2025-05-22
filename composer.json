@@ -20,7 +20,9 @@
         "App\\BinaryTrees\\": "src/BinaryTrees/",
 "App\\BinarySearchTrees\\": "src/binarySearchTrees/",
 "App\\Tries\\": "src/tries/",
-"App\\SlidingWindow\\": "src/slidingWindow/"
+"App\\SlidingWindow\\": "src/slidingWindow/",
+"App\\BinarySearch\\": "src/binarySearch/"
+
 
 
 
@@ -59,7 +61,9 @@
         "Tests\\BinaryTrees\\": "tests/binaryTrees/",
 "Tests\\BinarySearchTrees\\": "tests/binarySearchTrees/",
 "Tests\\Tries\\": "tests/tries/",
-"Tests\\SlidingWindow\\": "tests/slidingWindow/"
+"Tests\\SlidingWindow\\": "tests/slidingWindow/",
+"Tests\\BinarySearch\\": "tests/binarySearch/"
+
 
 
 
